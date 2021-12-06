@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.css';
-import {DefaultTheme, ThemeProvider} from "styled-components";
-import {Link} from "./component/link/link.component";
-import {LinkType} from "./component/link/link.types";
+import styled, {DefaultTheme, ThemeProvider} from "styled-components";
+import {StyledContainer} from "./component/container/container.styled";
+import {Container} from "./component/container/container.component";
 
 function App() {
   const theme : DefaultTheme = {
@@ -19,11 +18,20 @@ function App() {
           }
       }
   }
+  const AppContainer = styled.div`
+    background: #F2F2F2;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  `
+
   return (
       <ThemeProvider theme={theme}>
-          <header className="App-header">
-            <Link linkType={LinkType.PRIMARY} label="test" />
-          </header>
+          <AppContainer>
+            <Container />
+          </AppContainer>
       </ThemeProvider>
   );
 }
