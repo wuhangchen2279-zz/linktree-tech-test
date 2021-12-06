@@ -4,7 +4,7 @@ import {StyledInfoBox, UserNameBox} from "./user-info.styled";
 
 export const UserInfo: React.FC<Props> = ({username, imageUrl}) => {
     return <StyledInfoBox>
-        <img src={process.env.PUBLIC_URL + imageUrl} alt="user image"/>
+        <img src={process.env.PUBLIC_URL + imageUrl} alt="user"/>
         <UserNameBox>
             @{username}
         </UserNameBox>

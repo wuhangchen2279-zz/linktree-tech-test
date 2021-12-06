@@ -1,0 +1,20 @@
+{
+  "username": "myName",
+  "profileUrl": "/assets/profile-picture.png",
+  "preference": {
+    "theme": {
+      "link": {
+        "primary": {
+          "color": "red",
+          "textAlign": "center",
+          "backgroundColor": "grey"
+        },
+        "secondary": {
+          "color": "black",
+          "textAlign": "left",
+          "backgroundColor": "green"
+        }
+      }
+    }
+  }
+}

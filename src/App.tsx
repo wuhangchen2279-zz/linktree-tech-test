@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, {DefaultTheme, ThemeProvider} from "styled-components";
-import {StyledContainer} from "./component/container/container.styled";
 import {Container} from "./component/container/container.component";
 
 function App() {

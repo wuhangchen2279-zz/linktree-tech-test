@@ -1,9 +1,12 @@
 import React from "react";
 import {ListContainer, Logo, Profile, Row, StyledContainer} from "./container.styled";
 import {UserInfo} from "../user-info/user-info.component";
+import useData from "../../hooks/useData";
+import {UserData} from "../../types";
 
 export const Container: React.FC = () => {
-    console.log('aaa');
+    const [ loading, data, error] = useData<UserData>('user.json');
+    console.log(data, loading, error)
     return (
         <StyledContainer>
             <Profile>
