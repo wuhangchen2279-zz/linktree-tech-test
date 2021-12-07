@@ -17,6 +17,7 @@ export const Logo = styled.div`
 export const ListContainer = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
+  width: 80%;
 `
 
 export const Row = styled.div`

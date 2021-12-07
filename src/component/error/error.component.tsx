@@ -1,0 +1,1 @@
+export const Error: React.FC = () => <h3>Error happens, please try later...</h3>

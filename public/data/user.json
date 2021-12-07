@@ -5,16 +5,28 @@
     "theme": {
       "link": {
         "primary": {
-          "color": "red",
+          "color": "black",
           "textAlign": "center",
-          "backgroundColor": "grey"
+          "backgroundColor": "green",
+          "hoverColor": "red"
         },
         "secondary": {
           "color": "black",
           "textAlign": "left",
-          "backgroundColor": "green"
+          "backgroundColor": "green",
+          "hoverColor": "white"
         }
       }
     }
-  }
+  },
+  "links": [
+    {
+      "title": "title 1",
+      "url": "https://www.google.com/"
+    },
+    {
+      "title": "title 2",
+      "url": "https://www.google.com/"
+    }
+  ]
 }

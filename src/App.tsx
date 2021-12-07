@@ -1,22 +1,10 @@
 import React from 'react';
-import styled, {DefaultTheme, ThemeProvider} from "styled-components";
+import styled from "styled-components";
 import {Container} from "./component/container/container.component";
 
 function App() {
-  const theme : DefaultTheme = {
-      link: {
-          primary: {
-              color: 'red',
-              textAlign: 'center',
-              backgroundColor: 'grey',
-          },
-          secondary: {
-              color: 'black',
-              textAlign: 'left',
-              backgroundColor: 'green',
-          }
-      }
-  }
+
+
   const AppContainer = styled.div`
     background: #F2F2F2;
     width: 100%;
@@ -27,11 +15,9 @@ function App() {
   `
 
   return (
-      <ThemeProvider theme={theme}>
-          <AppContainer>
-            <Container />
-          </AppContainer>
-      </ThemeProvider>
+      <AppContainer>
+        <Container/>
+      </AppContainer>
   );
 }
 
