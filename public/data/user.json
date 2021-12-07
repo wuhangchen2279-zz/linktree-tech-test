@@ -45,8 +45,8 @@
       "title": "title 3",
       "details": [
         {
-          "title": "Music",
-          "url": "some.mp3"
+          "iconUrl": "/assets/music.svg",
+          "url": "/assets/music.mp3"
         },
         {
           "title": "Spotify",

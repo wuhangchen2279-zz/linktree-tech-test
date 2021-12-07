@@ -3,25 +3,32 @@ import {Link} from "../link/link.component";
 import {LinkType} from "../link/link.types";
 import {Props} from "./expandable-link.types";
 import {DetailRow, IconBox, LinkBox, ProviderBox, StyledExpandableBox} from "./expandable-link.styled";
+import {SupportedMusicType} from "../music-player/music-player.types";
+import {MusicPlayer} from "../music-player/music-player.component";
 
 export const ExpandableLink: React.FC<Props> = ({label, detailItems, providerUrl}) => {
     const [expanded, setExpanded] = useState(false);
 
     const renderDetailLinks = () => {
-        return detailItems.map((itm, index) =>
-            <DetailRow key={index}>
-                {itm.iconUrl && <IconBox><img src={process.env.PUBLIC_URL + itm.iconUrl} alt="icon"/></IconBox>}
-                <LinkBox>
-                    <Link
-                        linkType={LinkType.SECONDARY}
-                        label={itm.title}
-                        subLabel={itm.subTitle}
-                        href={itm.url}
-                        status={itm.status}
-                    />
-                </LinkBox>
-            </DetailRow>
-        )
+        return detailItems.map((itm, index) => {
+            const {url, iconUrl, subTitle, status, title} = itm;
+            if(url.substring(url.length - 3) === SupportedMusicType.MP3) {
+                return <MusicPlayer iconUrl={iconUrl!} musicSrc={url}/>
+            } else {
+                return <DetailRow>
+                    {iconUrl && <IconBox><img src={process.env.PUBLIC_URL + iconUrl} alt="icon"/></IconBox>}
+                    <LinkBox>
+                        <Link
+                            linkType={LinkType.SECONDARY}
+                            label={title}
+                            subLabel={subTitle}
+                            href={url}
+                            status={status}
+                        />
+                    </LinkBox>
+                </DetailRow>
+            }
+        })
     }
 
     return <>
