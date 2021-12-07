@@ -21,11 +21,11 @@
   },
   "links": [
     {
-      "title": "title 1",
+      "title": "classic link",
       "url": "https://www.google.com/"
     },
     {
-      "title": "title 2",
+      "title": "show link",
       "providerUrl": "/assets/by-songkick-wordmark.svg",
       "details": [
         {
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "title": "title 3",
+      "title": "music link",
       "details": [
         {
           "iconUrl": "/assets/music.svg",
