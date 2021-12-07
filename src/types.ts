@@ -1,18 +1,5 @@
 import {DefaultTheme} from "styled-components";
-
-export interface DetailLinkItem {
-    title: string;
-    subTitle?: string;
-    status?: string;
-    url: string;
-}
-
-export interface LinkItem {
-    title: string,
-    url?: string,
-    providerUrl?: string,
-    details: DetailLinkItem[]
-}
+import {LinkItem} from "./component/container/container.types";
 
 export interface UserData {
     username: string,

@@ -11,10 +11,10 @@
           "hoverColor": "red"
         },
         "secondary": {
-          "color": "black",
+          "color": "white",
           "textAlign": "left",
-          "backgroundColor": "green",
-          "hoverColor": "white"
+          "backgroundColor": "grey",
+          "hoverColor": "blue"
         }
       }
     }
@@ -50,11 +50,13 @@
         },
         {
           "title": "Spotify",
-          "url": "https://www.google.com/"
+          "url": "https://www.google.com/",
+          "iconUrl": "/assets/spotify.svg"
         },
         {
           "title": "Soundcloud",
-          "url": "https://www.google.com/"
+          "url": "https://www.google.com/",
+          "iconUrl": "/assets/soundcloud.svg"
         }
       ]
     }

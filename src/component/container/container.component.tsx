@@ -4,10 +4,12 @@ import {UserInfo} from "../user-info/user-info.component";
 import {Link} from "../link/link.component";
 import {LinkType} from "../link/link.types";
 import useData from "../../hooks/useData";
-import {LinkItem, UserData} from "../../types";
+import {UserData} from "../../types";
 import {LoadingSpin} from "../loading-spin/loading-spin.component";
 import {Error} from "../error/error.component";
 import {ThemeProvider} from "styled-components";
+import {ExpandableLink} from "../expandable-link/expandable-link.component";
+import {LinkItem} from "./container.types";
 
 export const Container: React.FC = () => {
     const [ loading, data, error] = useData<UserData>('user.json');
@@ -15,7 +17,16 @@ export const Container: React.FC = () => {
     const renderRows = (links: LinkItem[]) => {
         return links.map((itm, idx) =>
             <Row key={idx}>
-                <Link linkType={LinkType.PRIMARY} label={itm.title} href={itm.url}/>
+                {
+                    !itm.details?
+                    <Link linkType={LinkType.PRIMARY} label={itm.title} href={itm.url}/>
+                    : <ExpandableLink
+                        label={itm.title}
+                        providerUrl={itm.providerUrl}
+                        detailItems={itm.details}
+                        />
+                }
+
             </Row>
         )
     }
