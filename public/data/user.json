@@ -26,7 +26,37 @@
     },
     {
       "title": "title 2",
-      "url": "https://www.google.com/"
+      "providerUrl": "/assets/by-songkick-wordmark.svg",
+      "details": [
+        {
+          "title": "Apr 01 2019",
+          "subTitle": "The forum, Melbourne",
+          "url": "https://www.google.com/"
+        },
+        {
+          "title": "Apr 02 2019",
+          "subTitle": "Venue Name, Sydney",
+          "status": "Sold out",
+          "url": "https://www.google.com/"
+        }
+      ]
+    },
+    {
+      "title": "title 3",
+      "details": [
+        {
+          "title": "Music",
+          "url": "some.mp3"
+        },
+        {
+          "title": "Spotify",
+          "url": "https://www.google.com/"
+        },
+        {
+          "title": "Soundcloud",
+          "url": "https://www.google.com/"
+        }
+      ]
     }
   ]
 }
