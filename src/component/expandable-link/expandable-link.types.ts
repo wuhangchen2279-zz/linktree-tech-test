@@ -4,6 +4,7 @@ export interface DetailLinkItem {
     status?: string;
     url: string;
     iconUrl?: string;
+    logoUrl?: string;
 }
 
 export interface Props {

@@ -2,38 +2,46 @@ import React, {useState} from "react";
 import {Link} from "../link/link.component";
 import {LinkType} from "../link/link.types";
 import {Props} from "./expandable-link.types";
-import {DetailRow, IconBox, LinkBox, ProviderBox, StyledExpandableBox} from "./expandable-link.styled";
-import {SupportedMusicType} from "../music-player/music-player.types";
+import {DetailRow, LinkBox, ProviderBox, StyledExpandableBox} from "./expandable-link.styled";
 import {MusicPlayer} from "../music-player/music-player.component";
-import {StyledLink} from "../link/link.styled";
 
 export const ExpandableLink: React.FC<Props> = ({label, detailItems, providerUrl, expanded, onClick}) => {
+    const [musicSrc, setMusicSrc] = useState<string | undefined>(undefined);
+    const [musicIcon, setMusicIcon] = useState<string | undefined>(undefined);
+    const [musicName, setMusicName] = useState<string | undefined>(undefined);
     const renderDetailLinks = () => {
         return detailItems.map((itm, index) => {
-            const {url, iconUrl, subTitle, status, title} = itm;
-            if(url.substring(url.length - 3) === SupportedMusicType.MP3) {
-                return <MusicPlayer key={index} iconUrl={iconUrl!} musicSrc={url} dataCy="musicBox"/>
-            } else {
-                return <DetailRow key={index}  data-cy="detailRow">
-                    {iconUrl && <IconBox><img src={process.env.PUBLIC_URL + iconUrl} alt="icon"/></IconBox>}
-                    <LinkBox>
-                        <Link
-                            dataCy={title}
-                            linkType={LinkType.SECONDARY}
-                            label={title}
-                            subLabel={subTitle}
-                            href={url}
-                            status={status}
-                        />
-                    </LinkBox>
-                </DetailRow>
-            }
+            const {url, iconUrl, subTitle, status, title, logoUrl} = itm;
+            return <DetailRow key={index}  data-cy="detailRow">
+                <LinkBox>
+                    <Link
+                        dataCy={title}
+                        linkType={LinkType.SECONDARY}
+                        label={title}
+                        subLabel={subTitle}
+                        status={status}
+                        href={url}
+                        logoUrl={logoUrl}
+                        onClick={() => {
+                            setMusicIcon(iconUrl)
+                            setMusicSrc(url)
+                            setMusicName(label)
+                        }}
+                    />
+                </LinkBox>
+            </DetailRow>
         })
     }
 
     return <>
         <Link linkType={LinkType.PRIMARY} label={label} onClick={onClick}/>
         {expanded && <StyledExpandableBox>
+            {musicName && musicSrc && musicIcon && <MusicPlayer
+              dataCy="musicBox"
+              iconUrl={musicIcon}
+              musicSrc={musicSrc}
+              name={musicName}
+            />}
             {renderDetailLinks()}
             {providerUrl && <ProviderBox><img src={process.env.PUBLIC_URL + providerUrl} alt={'provider'}/></ProviderBox>}
         </StyledExpandableBox>

@@ -12,9 +12,9 @@ describe('test acceptance criteria', () => {
 
   it('click music link will display music in different platforms', () => {
     cy.get('a').last().click()
-    cy.get('[data-cy=musicBox]').should("be.visible")
-    cy.get('[data-cy=Spotify]').should("be.visible")
     cy.get('[data-cy=Soundcloud]').should("be.visible")
+    cy.get('[data-cy=Spotify]').first().click()
+    cy.get('[data-cy=musicBox]').should("be.visible")
   })
 
   it('click shows link will display 2 shows', () => {

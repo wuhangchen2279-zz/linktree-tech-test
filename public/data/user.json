@@ -45,18 +45,16 @@
       "title": "music link",
       "details": [
         {
-          "iconUrl": "/assets/music.svg",
-          "url": "/assets/music.mp3"
-        },
-        {
           "title": "Spotify",
           "url": "https://www.google.com/",
-          "iconUrl": "/assets/spotify.svg"
+          "iconUrl": "/assets/spotify.svg",
+          "logoUrl": "/assets/spotify.svg"
         },
         {
           "title": "Soundcloud",
           "url": "https://www.google.com/",
-          "iconUrl": "/assets/soundcloud.svg"
+          "iconUrl": "/assets/soundcloud.svg",
+          "logoUrl": "/assets/soundcloud.svg"
         }
       ]
     }

@@ -1,6 +1,9 @@
+import {ReactNode} from "react";
+
 export interface Props {
     linkType: LinkType;
-    label: string;
+    label: string | ReactNode;
+    logoUrl?: string;
     href?: string;
     onClick?: () => void;
     subLabel?: string;
