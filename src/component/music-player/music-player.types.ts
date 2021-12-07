@@ -5,4 +5,5 @@ export enum SupportedMusicType {
 export interface Props {
     iconUrl: string,
     musicSrc: string
+    dataCy?: string
 }

@@ -9,5 +9,7 @@ export interface DetailLinkItem {
 export interface Props {
     label: string,
     providerUrl?: string,
-    detailItems: DetailLinkItem[]
+    detailItems: DetailLinkItem[],
+    expanded: boolean,
+    onClick: () => void
 }

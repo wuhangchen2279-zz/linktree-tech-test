@@ -5,6 +5,7 @@ export interface Props {
     onClick?: () => void;
     subLabel?: string;
     status?: string;
+    dataCy?: string;
 }
 
 export interface StyledLinkProps {

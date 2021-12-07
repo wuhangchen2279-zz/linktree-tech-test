@@ -10,12 +10,14 @@ export const Link: React.FC<Props> = (
         subLabel,
         href,
         onClick,
-        status
+        status,
+        dataCy
     }
 ) => {
     const { link } = useTheme();
     const { textAlign, color, backgroundColor, hoverColor } = link[linkType];
     return <StyledLink
+        data-cy={dataCy}
         backgroundColor={backgroundColor}
         color={color}
         textAlign={textAlign}
