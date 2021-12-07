@@ -15,5 +15,4 @@ export const StyledLink = styled.a`
     &:hover {
       background: ${(props: LinkCustomStyles) => props.hoverColor};
     }
-    
 `
